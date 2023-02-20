@@ -1,0 +1,25 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+}
+
+.logo {
+    height: 40px;
+}
+
+.inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 2px;
+}
+
+.title {
+    font-family: 'Labrada', serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #8a2be2;
+    margin-bottom: 15px;
+}

@@ -1,6 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
+import Search from './components/Search';
+import Navbar from './components/Navbar';
+import Details from './components/Details';
 
 const App = () => {
 
@@ -16,9 +19,7 @@ const App = () => {
   async function getdef() {
     try{
       const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${prompt}`);
-      console.log(response.status);
       var data = await response.json();
-      console.log(data);
       if(response.status == 404) {
         setErr(data);
         setD([]);
@@ -35,12 +36,12 @@ const App = () => {
 
   return (
     <div className='dict'>
-      <input type='text' onChange={promptChangeHandler} value={prompt} onKeyDown={e => {
-        if(e.key == 'Enter'){
-          getdef();
-        }
-      }}/>
-      <button onClick={getdef}>Look It Up</button>
+      <Navbar />
+      <Search 
+        prompt = {prompt}
+        getdef = {getdef}
+        promptChangeHandler = {promptChangeHandler}
+      />
       {
         err
         ?
