@@ -1,0 +1,15 @@
+.error--text {
+    font-size: 30px;
+    font-family: 'Labrada', serif;
+}
+
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error--icon {
+    font-size: 200px;
+}

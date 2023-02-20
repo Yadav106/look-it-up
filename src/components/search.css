@@ -35,7 +35,7 @@
     color: white;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .search--icon:hover{
         background: rgb(243, 240, 240);
         color: #8a2be2;

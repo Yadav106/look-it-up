@@ -4,12 +4,18 @@ import { nanoid } from 'nanoid';
 import Search from './components/Search';
 import Navbar from './components/Navbar';
 import Details from './components/Details';
+import Error from './components/Error';
 
 const App = () => {
 
   const [prompt, setPrompt] = useState("");
   const[d, setD] = useState(null);
   const [err, setErr] = useState(null)
+  const [isDark, setIsDark] = useState(false)
+
+  function toggleDark(){
+    setIsDark(prev => !prev)
+  }
 
 
   function promptChangeHandler(e) {
@@ -36,17 +42,17 @@ const App = () => {
 
   return (
     <div className='dict'>
-      <Navbar />
+      <Navbar isDark = {isDark} toggleDark = {toggleDark}/>
       <Search 
         prompt = {prompt}
         getdef = {getdef}
         promptChangeHandler = {promptChangeHandler}
       />
-      
+
       {
         err
         ?
-        <pre className='bigdata' key={nanoid()}>{JSON.stringify(err.title)}</pre>
+        <Error />
         :
         <>
           <div className="word--details">
