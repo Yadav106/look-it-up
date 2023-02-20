@@ -1,3 +1,15 @@
+:root {
+    --background: white;
+    --purple: #8a2be2;
+    --word: black;
+}
+
+[data-theme = "dark"]{
+    --background: #36393F;
+    --purple: #b06def;
+    --word: antiquewhite;
+}
+
 .input--fields {
     display: flex;
     justify-content: center;
@@ -10,8 +22,8 @@
     width: 55vw;
     background-color: rgb(243, 240, 240);
     border-radius: 10px;
-    border: 2px solid #8a2be2;
-    font-size: large;
+    border: 2px solid var(--purple);
+    font-size: 30px;
     font-weight: bold;
     padding-left: 30px;
     font-family: 'Labrada', serif;
@@ -26,18 +38,18 @@
     cursor: pointer;
     transition: all;
     transition-duration: 300ms;
-    color: #8a2be2;
-    border: 1px #8a2be2 solid;
+    color: var(--purple);
+    border: 1px --purple solid;
 }
 
 .search--icon:hover {
-    background-color: #8a2be2;
+    background-color: var(--purple);
     color: white;
 }
 
 @media only screen and (max-width: 800px) {
     .search--icon:hover{
         background: rgb(243, 240, 240);
-        color: #8a2be2;
+        color: var(--purple);
     }
 }

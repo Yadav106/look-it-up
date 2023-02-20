@@ -41,32 +41,37 @@ const App = () => {
   }
 
   return (
-    <div className='dict'>
-      <Navbar isDark = {isDark} toggleDark = {toggleDark}/>
-      <Search 
-        prompt = {prompt}
-        getdef = {getdef}
-        promptChangeHandler = {promptChangeHandler}
-      />
+    <div className="main">
+      <div className="themebg" data-theme={isDark?"dark":""}></div>
+      <div className='dict'>
+        
+        <Navbar isDark = {isDark} toggleDark = {toggleDark}/>
+        <Search 
+          prompt = {prompt}
+          getdef = {getdef}
+          promptChangeHandler = {promptChangeHandler}
+          isDark = {isDark}
+        />
 
-      {
-        err
-        ?
-        <Error />
-        :
-        <>
-          <div className="word--details">
-            {d && <h1 className="word">{d[0]['word']}</h1>}
-            {d && <p className="phonetic">{d[0]['phonetics'][0]['text']}</p>}
-          </div>
-          {d && d.map(item => {
-            const meanings = item["meanings"]
-            return meanings.map(element => {
-              return <Details element={element} key={nanoid()} />
-            })
-          })}
-        </>
-      }
+        {
+          err
+          ?
+          <Error isDark={isDark}/>
+          :
+          <>
+            <div className="word--details">
+              {d && <h1 className="word" data-theme={isDark?"dark":""}>{d[0]['word']}</h1>}
+              {d && <p className="phonetic" data-theme={isDark?"dark":""}>{d[0]['phonetics'][0]['text']}</p>}
+            </div>
+            {d && d.map(item => {
+              const meanings = item["meanings"]
+              return meanings.map(element => {
+                return <Details isDark={isDark} element={element} key={nanoid()} />
+              })
+            })}
+          </>
+        }
+      </div>
     </div>
   )
 }

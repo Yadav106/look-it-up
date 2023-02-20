@@ -1,3 +1,17 @@
+:root {
+    --word: black;
+    --purple: #8a2be2;
+    --gray: gray;
+    --hrline: rgb(164, 160, 160);
+}
+
+[data-theme = "dark"]{
+    --word: antiquewhite;
+    --purple: #b06def;
+    --gray: rgb(202, 199, 199);
+    --hrline: rgb(201, 198, 198);
+}
+
 .details {
     display: flex;
     flex-direction: column;
@@ -17,13 +31,14 @@
 .hor--line {
     width: 70vw;
     height: 2px;
-    background-color: rgb(164, 160, 160);
+    background-color: var(--hrline);
     border-radius: 10px;
     border: none;
 }
 
 .speech {
     font-size: 40px;
+    color: var(--word);
 }
 
 .meanings, .synonyms, .antonyms {
@@ -34,21 +49,21 @@
 }
 
 .title {
-    color: gray;
+    color: var(--gray);
     font-size: 20px;
 }
 
 ul {
     list-style: none;
-    color: gray;
+    color: var(--gray);
 }
 ul li::before {
-    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-    color: #8a2be2; /* Change the color */
-    font-weight: bolder; /* If you want it to be bold */
-    display: inline-block; /* Needed to add space between the bullet and the text */ 
-    width: 1em; /* Also needed for space (tweak if needed) */
-    margin-left: -1em; /* Also needed for space (tweak if needed) */
+    content: "\2022";
+    color: var(--purple);
+    font-weight: bolder;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
 }
 
 .list--item {

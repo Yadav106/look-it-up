@@ -7,9 +7,10 @@ const Details = (props) => {
     const definitions = element['definitions']
     const synonyms = element['synonyms']
     const antonyms = element['antonyms']
+    const isDark = props.isDark;
 
     return (
-    <div className="details">
+    <div className="details" data-theme={isDark?"dark":""}>
         <div className="pos">
             <p className="speech">{element['partOfSpeech']}</p>
             <hr className='hor--line'/>

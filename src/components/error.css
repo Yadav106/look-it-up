@@ -1,6 +1,17 @@
+:root {
+    --word: black;
+    --error: black;
+}
+
+[data-theme = "dark"]{
+    --word: antiquewhite;
+    --error: rgb(207, 207, 56);
+}
+
 .error--text {
     font-size: 30px;
     font-family: 'Labrada', serif;
+    color: var(--word);
 }
 
 .error {
@@ -11,5 +22,7 @@
 }
 
 .error--icon {
-    font-size: 200px;
+    margin-top: 40px;
+    font-size: 300px;
+    color: var(--error);
 }

@@ -1,33 +1,48 @@
 * {
   margin: 0;
+  transition: all;
+  transition-duration: 300ms;
+}
+
+:root {
+  --background: white;
+  --purple: #8a2be2;
+  --word: black;
+}
+
+[data-theme = "dark"]{
+  --background: #36393F;
+  --purple: #b06def;
+  --word: antiquewhite;
 }
 
 .dict {
-  padding: 30px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
-}
-
-.bigdata {
-  top: 200px;
-  max-width: 1200px;
-  width: 1200px;
-  overflow: scroll;
-  background-color: antiquewhite;
-  margin-bottom: 10px;
+  position: absolute;
 }
 
 .word {
   width: 90vw;
   font-size: 60px;
   font-family: 'Labrada', serif;
+  color: var(--word);
 }
 
 .phonetic {
-  color: #8a2be2;
+  color: var(--purple);
   margin-left: 10px;
   font-size: 20px;
+}
+
+.themebg {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: -100;
+  background-color: var(--background);
 }
