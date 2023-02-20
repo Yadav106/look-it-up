@@ -3,7 +3,7 @@
 ## Overview
 
 ### Link
-![Look It Up(website)](https://just-look-it-up.netlify.app)
+[Look It Up(website)](https://just-look-it-up.netlify.app)
 
 ### Built With
  - ReactJS
