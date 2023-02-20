@@ -31,6 +31,7 @@ const App = () => {
     try{
       const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${prompt}`);
       var data = await response.json();
+      console.log(data);
       if(response.status == 404) {
         setErr(data);
         setD([]);
@@ -65,8 +66,8 @@ const App = () => {
           :
           <>
             <div className="word--details">
-              {d && <h1 className="word" data-theme={isDark?"dark":""}>{d[0]['word']}</h1>}
-              {d && <p className="phonetic" data-theme={isDark?"dark":""}>{d[0]['phonetics'][0]['text']}</p>}
+              {d && d[0] && <h1 className="word" data-theme={isDark?"dark":""}>{d[0]['word']}</h1>}
+              {d && d[0] && d[0]['phonetics'] && d[0]['phonetics'][0] && <p className="phonetic" data-theme={isDark?"dark":""}>{d[0]['phonetics'][0]['text']}</p>}
             </div>
             {d && d.map(item => {
               const meanings = item["meanings"]
