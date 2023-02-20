@@ -25,10 +25,8 @@ const Details = (props) => {
         </ul>
         </div>
         {
-            synonyms.length == 0
-            ?
-            ""
-            :
+            synonyms.length > 0
+            &&
             <div className="synonyms">
                 <p className="title">Synonyms :&nbsp;&nbsp; </p>
                 <ul>
@@ -39,10 +37,8 @@ const Details = (props) => {
             </div>
         }
         {
-            antonyms.length == 0
-            ?
-            ""
-            :
+            antonyms.length > 0
+            &&
             <div className="antonyms">
                 <p className="title">Antonyms :&nbsp;&nbsp; </p>
                 <ul>
