@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+}
+
+.dict {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.bigdata {
+  top: 200px;
+  max-width: 1200px;
+  width: 1200px;
+  overflow: scroll;
+  background-color: antiquewhite;
+  margin-bottom: 10px;
+}
