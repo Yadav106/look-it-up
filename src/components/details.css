@@ -68,5 +68,6 @@ ul li::before {
 
 .list--item {
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 

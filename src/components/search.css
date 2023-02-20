@@ -1,11 +1,12 @@
 :root {
-    --background: white;
+    --background-button: rgb(243, 240, 240);
     --purple: #8a2be2;
     --word: black;
+
 }
 
 [data-theme = "dark"]{
-    --background: #36393F;
+    --background-button: rgb(30, 29, 29);
     --purple: #b06def;
     --word: antiquewhite;
 }
@@ -20,26 +21,27 @@
 .input--text {
     height: 45px;
     width: 55vw;
-    background-color: rgb(243, 240, 240);
+    background-color: var(--background-button);
     border-radius: 10px;
     border: 2px solid var(--purple);
     font-size: 30px;
     font-weight: bold;
     padding-left: 30px;
     font-family: 'Labrada', serif;
+    color: var(--word);
 }
 
 .search--icon {
     height: 40px;
     width: 40px;
-    background: rgb(243, 240, 240);
+    background: var(--background-button);
     border-radius: 10px;
     padding: 5px;
     cursor: pointer;
     transition: all;
     transition-duration: 300ms;
     color: var(--purple);
-    border: 1px --purple solid;
+    border: 1px var(--purple) solid;
 }
 
 .search--icon:hover {
@@ -47,9 +49,9 @@
     color: white;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
     .search--icon:hover{
-        background: rgb(243, 240, 240);
+        background: var(--background);
         color: var(--purple);
     }
 }

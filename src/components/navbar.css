@@ -2,12 +2,14 @@
     --background: white;
     --purple: #8a2be2;
     --word: black;
+    --background-button: rgb(243, 240, 240);
 }
 
 [data-theme = "dark"]{
     --background: #36393F;
     --purple: #b06def;
     --word: antiquewhite;
+    --background-button: rgb(30, 29, 29);
 }
 
 .navbar {
@@ -43,7 +45,7 @@
     font-size: 40px;
     cursor: pointer;
     color: var(--purple);
-    background-color: rgb(243, 240, 240);
+    background-color: var(--background-button);
     padding: 5px;
     border-radius: 10px;
     border: 1px solid #8a2be2;

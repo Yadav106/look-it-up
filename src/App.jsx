@@ -11,10 +11,15 @@ const App = () => {
   const [prompt, setPrompt] = useState("");
   const[d, setD] = useState(null);
   const [err, setErr] = useState(null)
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(JSON.parse(localStorage.getItem('theme')) || false)
+
 
   function toggleDark(){
-    setIsDark(prev => !prev)
+    setIsDark(prev => {
+      const newTheme = !prev;
+      localStorage.setItem('theme', newTheme);
+      return newTheme;
+    })
   }
 
 
