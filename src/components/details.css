@@ -1,0 +1,57 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pos {
+    display: flex;
+    width: 90vw;
+    font-family: 'Mynerve', cursive;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hor--line {
+    width: 70vw;
+    height: 2px;
+    background-color: rgb(164, 160, 160);
+    border-radius: 10px;
+    border: none;
+}
+
+.speech {
+    font-size: 40px;
+}
+
+.meanings, .synonyms, .antonyms {
+    width: 70vw;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.title {
+    color: gray;
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+    color: gray;
+}
+ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #8a2be2; /* Change the color */
+    font-weight: bolder; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */ 
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.list--item {
+    margin-top: 10px;
+}
+

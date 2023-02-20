@@ -8,7 +8,7 @@ import Details from './components/Details';
 const App = () => {
 
   const [prompt, setPrompt] = useState("");
-  const[d, setD] = useState([]);
+  const[d, setD] = useState(null);
   const [err, setErr] = useState(null)
 
 
@@ -42,14 +42,24 @@ const App = () => {
         getdef = {getdef}
         promptChangeHandler = {promptChangeHandler}
       />
+      
       {
         err
         ?
-        <pre className='bigdata' key={nanoid()}>{JSON.stringify(err, null, 4)}</pre>
+        <pre className='bigdata' key={nanoid()}>{JSON.stringify(err.title)}</pre>
         :
-        d.map(item => {
-          return <pre className='bigdata' key={nanoid()}>{JSON.stringify(item, null, 4)}</pre>;
-        })
+        <>
+          <div className="word--details">
+            {d && <h1 className="word">{d[0]['word']}</h1>}
+            {d && <p className="phonetic">{d[0]['phonetics'][0]['text']}</p>}
+          </div>
+          {d && d.map(item => {
+            const meanings = item["meanings"]
+            return meanings.map(element => {
+              return <Details element={element} key={nanoid()} />
+            })
+          })}
+        </>
       }
     </div>
   )

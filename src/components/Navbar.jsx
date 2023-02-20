@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className="navbar">
         <div className='inner'>
             <img src={logo} className='logo'/>
-            <p className="title">LOOK IT UP</p>
+            <p className="title--navbar">LOOK IT UP</p>
         </div>
     </div>
   )
